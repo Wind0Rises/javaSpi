@@ -6,7 +6,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 /**
- * @desc
+ * @desc Mysql基于SPI开发数据库连接。
  * @author Liuweian
  * @version 1.0.0
  * @createTime 2020/5/29 9:37

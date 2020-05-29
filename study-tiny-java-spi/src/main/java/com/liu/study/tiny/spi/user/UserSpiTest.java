@@ -8,7 +8,7 @@ import java.util.Iterator;
 import java.util.ServiceLoader;
 
 /**
- * @desc
+ * @desc SPI测试类。
  * @author Liuweian
  * @version 1.0.0
  * @createTime 2020/5/29 13:24

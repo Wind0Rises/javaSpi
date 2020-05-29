@@ -4,7 +4,7 @@ import com.liu.study.tiny.common.spi.IUserService;
 import com.liu.study.tiny.common.spi.UserModel;
 
 /**
- * @desc
+ * @desc SPI 用户服务提供者。   ===》  接口测试
  * @author Liuweian
  * @version 1.0.0
  * @createTime 2020/5/29 13:18

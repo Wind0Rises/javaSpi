@@ -1,9 +1,9 @@
 package com.liu.study.tiny.common.spi;
 
 /**
+ * @desc 用户实体
  * @author Liuweian
  * @version 1.0.0
- * @desc
  * @createTime 2020/5/29 13:53
  */
 public class UserModel {

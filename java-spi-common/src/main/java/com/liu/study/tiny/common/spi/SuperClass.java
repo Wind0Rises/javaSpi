@@ -1,7 +1,7 @@
 package com.liu.study.tiny.common.spi;
 
 /**
- * @desc
+ * @desc SPI   继承测试父类。
  * @author Liuweian
  * @version 1.0.0
  * @createTime 2020/5/29 14:10

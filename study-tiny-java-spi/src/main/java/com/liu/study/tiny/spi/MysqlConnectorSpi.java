@@ -34,11 +34,28 @@ public class MysqlConnectorSpi {
          *      ServiceLoader加载对应的Driver实现，在构建一个ServiceLoader实例时，使用的Thread.currentThread().getContextClassLoader()的
          *      类加载器.
          *
+         *
+         * 为什么说SPI打破了双亲委派机制呢？
+         *      1、以DriverManager和com.mysql.cj.jdbc.Driver为例，
+         *          在DriverManager去构建一个Connection需要一个Driver实例，在DriverManager中取实例化
+         *          一个Driver实例，默认情况下使用的是DriverManager的ClassLoader【全盘委托机制】，因为
+         *          DriverManager是rt.jar中的，其回去使用BootstrapClassLoader。但是一个com.mysql.cj.
+         *          jdbc.Driver非rt.jar的类使用BootstrapClassLoader去加载，所有其打破了双亲委派机制。
+         *
+         * 父加载器加载的类中，去调用子加载器去加载类？
+         *      1、JDK提供了两种方式，Thread.currentThread().getContextClassLoader()和ClassLoader.
+         *          getSystemClassLoader()一般都指向AppClassLoader，他们能加载classpath中的类。
+         *      2、SPI则用Thread.currentThread().getContextClassLoader()来加载实现类，实现在核心包
+         *          【rt.java】里的基础类中调用用户定义的类。
+         *
+         *
          */
         MysqlConnectorSpi mysqlConnectorSpi = new MysqlConnectorSpi();
         mysqlConnectorSpi.oldExecuteDataOperator();
         mysqlConnectorSpi.newExecuteDataOperator();
     }
+
+
 
     public void newExecuteDataOperator() {
         Connection connection = null;
